@@ -1,0 +1,20 @@
+menu:
+  button:
+  - name: "Photo Action"
+    sub_button:
+    - type: "pic_sysphoto"
+      name: "Take Photo"
+      key: "takephoto"
+    - type: "pic_photo_or_album"
+      name: "Select Photo"
+      key: "selectphoto"
+
+  - name: "Web Action"
+    sub_button:
+    - type: "view"
+      name: "afeil.com"
+      url: "http://www.afeil.com/members/new/"
+    - type: "view"
+      name: "test.com"
+      url: "www.baidu.com"
+

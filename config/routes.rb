@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'wechats/wechat_auth'
+  get 'wechats/auth', to: 'wechats#wechat_auth'
+  post 'wechats/auth', to: 'wechats#wechat_post'
 
-  get 'wechats/wechat_post'
+	get 'wechats/create_menu', to: 'wechats#create_menu'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

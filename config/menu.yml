@@ -1,0 +1,48 @@
+{
+  "button":[
+    {
+      "name": "Photo Action",
+      "sub_button": [
+        {
+          "type": "click",
+          "name": "Click Test",
+          "key": "clicktest",
+          "sub_button":[]
+        },
+        {
+          "type": "pic_sysphoto",
+          "name": "Take Photo",
+          "key": "takephoto",
+          "sub_button":[]
+        },
+        {
+          "type": "pic_photo_or_album",
+          "name": "Select Photo",
+          "key": "selectphoto",
+          "sub_button": []
+        }
+      ]
+    },
+    {
+      "name": "Web Page",
+      "sub_button":[
+        {
+          "type": "view",
+          "name": "afeil.com",
+          "url": "http://www.afeil.com/members/new/"
+        },
+        {
+          "type": "view",
+          "name": "test.com",
+          "url": "www.baidu.com"
+        }
+      ]
+    },
+    {
+      "name": "About Me",
+      "type": "click",
+      "key": "aboutme",
+      "sub_button":[]
+    }
+  ]
+}
