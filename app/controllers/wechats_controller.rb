@@ -38,24 +38,10 @@ class WechatsController < ApplicationController
 
 	private
 	
-	def check_signature?
-    Digest::SHA1.hexdigest( [params[:timestamp], params[:nonce], @@token].sort.join ) == params[:signature]
-	end
 
 	def gen_auth_path origin_path
   "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{origin_path}&response_type=code&scope=snsapi_base#wechat_redirect"  
 	end
 	
-	def get_access_token
-		if Rails.cache.read("access_token").nil?
-			uri = URI("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=#{ENV["APPID"]}&secret=#{ENV["SECRET"]}") 
-			res = Net::HTTP.get(uri)
-			result = JSON.parse(res)
-			Rails.logger.info( result["access_token"] )
-			Rails.cache.write("access_token", result["access_token"], expires_in: 7200)
-		else
-			Rails.cache.read("access_token")
-		end
-	end
 	
 end
