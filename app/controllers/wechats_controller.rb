@@ -1,5 +1,3 @@
-require 'digest/sha1'
-require 'net/http'
 require 'nokogiri'
 require 'yaml'
 require 'json'
@@ -11,8 +9,6 @@ class WechatsController < ApplicationController
 		render plain: params[:echostr]
   end
 
-	def welcome
-	end
 
   def wechat_post
 		content = request.body.read.force_encoding("UTF-8")
