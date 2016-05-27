@@ -1,4 +1,5 @@
 require 'net/http'
+require 'digest/sha1'
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -26,6 +27,15 @@ class ApplicationController < ActionController::Base
       Rails.cache.read("access_token")
     end
   end
+	
+	def http_post( url, body )
+		uri = URI(url)
+		Net::HTTP.start( uri.host, uri.port, use_ssl: uri.scheme == 'https') do |https|
+			request = Net::HTTP::Post.new( uri, {'Content-Type'=>'application/json'} )
+			request.body = body
+			response = http.request request
+		end
+	end
 
 
 end
