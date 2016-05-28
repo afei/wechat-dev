@@ -13,7 +13,7 @@ menu:
     sub_button:
     - type: "view"
       name: "afeil.com"
-      url: "http://www.afeil.com/members/new/"
+      url: "http://wechat.afeil.com/articles/1"
     - type: "view"
       name: "test.com"
       url: "www.baidu.com"

@@ -13,11 +13,10 @@ class WechatsController < ApplicationController
   def wechat_post
 		content = request.body.read.force_encoding("UTF-8")
 		Rails.logger.info( content )
-		doc = Nokogiri::Slop( content )
-    if doc.xml.MsgType.content == "event" and doc.xml.Event.content == "subscribe"
-			article = Article.find(1)
-      # render "articles/gen_message", layout: message, :formats => :xml
-			redirect_to "articles/show", :formats => :xml
+		@doc = Nokogiri::Slop( content )
+    if @doc.xml.MsgType.content == "event" and @doc.xml.Event.content == "subscribe"
+			@article = Article.find(1)
+			render "articles/show", layout: "message_layout", :formats => :xml
     else
       render "wechats/welcome", layout: message, :formats => :xml
     end
@@ -33,7 +32,7 @@ class WechatsController < ApplicationController
 
 		Rails.logger.info( "create_menu " + jsonmenu )
 		resbody = http_post( url, jsonmenu )
-		render "wechats/create_menu", layout: false, json: resbody
+    render "wechats/create_menu", layout: false, json: resbody
 	end
 
 	private
