@@ -1,12 +1,12 @@
 #!/usr/bin/env puma
 
 # rails environment
-environment 'production'
+environment 'development'
 threads 0, 16
-workers 2
+workers 1
 
 # application name, application path
-app_name = "wechat"
+app_name = "wechat-dev"
 # application_path = "/var/www/wechat-dev"
 application_path = "/Users/ichr/Rails/wechat-dev"
 directory "#{application_path}"
@@ -27,8 +27,8 @@ end
 preload_app!
 
 rackup DefaultRackup
-port ENV['PORT'] || 3000
-environment ENV['RACK_ENV'] || 'production'
+port ENV['PORT'] || 3030
+environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
   ActiveRecord::Base.establish_connection

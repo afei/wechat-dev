@@ -22,17 +22,16 @@ class WechatsController < ApplicationController
   end
 	
   def create_menu
-		# url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=#{get_access_token}"
+		url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=#{get_access_token}"
 		menufilepath = Rails.root.join( Rails.root, 'config', "wc_menu.yml" )
 		wechatmenu = YAML.load_file( menufilepath )['menu']
 		Rails.logger.info( wechatmenu )
 		wechatmenu["button"][1]["sub_button"][1]["url"] = gen_auth_path( ( "http://www.afeil.com/members/new/?words=welcome come").encode )
 		jsonmenu = JSON.generate( wechatmenu)
 
-		render plain: jsonmenu
-
-
-
+		Rails.logger.info( "create_menu " + jsonmenu )
+		resbody = http_post( url, jsonmenu )
+		render "wechats/create_menu", layout: false, json: resbody
 	end
 
 	private

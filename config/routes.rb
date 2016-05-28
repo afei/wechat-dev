@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'aritcle/index'
+
+  get 'aritcle/new'
+
+  get 'aritcle/create'
+
   get 'wechats/auth', to: 'wechats#wechat_auth'
   post 'wechats/auth', to: 'wechats#wechat_post'
 

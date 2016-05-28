@@ -19,10 +19,11 @@ class ApplicationController < ActionController::Base
 	def get_access_token
     if Rails.cache.read("access_token").nil?
       uri = URI("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=#{ENV["APPID"]}&secret=#{ENV["SECRET"]}")
-      res = Net::HTTP.get(uri)
-      result = JSON.parse(res)
+      res = http_get( uri )
+			result = JSON.parse( res ) 
       logger.info( result['access_token'] )
       Rails.cache.write("access_token", result['access_token'], expires_in: 7200)
+			Rails.cache.read("access_token")
     else
       Rails.cache.read("access_token")
     end
@@ -33,9 +34,16 @@ class ApplicationController < ActionController::Base
 		Net::HTTP.start( uri.host, uri.port, use_ssl: uri.scheme == 'https') do |https|
 			request = Net::HTTP::Post.new( uri, {'Content-Type'=>'application/json'} )
 			request.body = body
-			response = http.request request
+			response = https.request  request
+			response.body
 		end
 	end
 
+	def http_get( url )
+		uri = URI(url)
+		res = Net::HTTP.get_response(uri)
+		Rails.logger.info(" http_get " + res.body ) if res.is_a?(Net::HTTPSuccess)
+		res.body
+	end
 
 end
