@@ -15,9 +15,9 @@ class WechatsController < ApplicationController
 		Rails.logger.info( content )
 		doc = Nokogiri::Slop( content )
     if doc.xml.MsgType.content == "event" and doc.xml.Event.content == "subscribe"
-      render "wechats/subscribe", layout: false, :formats => :xml
+      render "wechats/welcome", layout: message, :formats => :xml
     else
-      render "wechats/message", layout: false, :formats => :xml
+      render "wechats/welcome", layout: message, :formats => :xml
     end
   end
 	

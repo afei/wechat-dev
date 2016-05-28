@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'aritcle/index'
+#  get 'article/index'
 
-  get 'aritcle/new'
+#  get 'article/new', to: 'article#new'
 
-  get 'aritcle/create'
+#  post 'article/create'
+
+  resources :articles
 
   get 'wechats/auth', to: 'wechats#wechat_auth'
   post 'wechats/auth', to: 'wechats#wechat_post'

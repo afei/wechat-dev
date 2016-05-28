@@ -1,0 +1,12 @@
+<xml>
+	<ToUserName><![CDATA[<%= doc.xml.FromUserName.content %>]]></ToUserName>
+  <FromUserName><![CDATA[<%= doc.xml.ToUserName.content  %>]]></FromUserName>
+  <CreateTime><%= Time.now.to_i %></CreateTime>
+  <MsgType><![CDATA[news]]></MsgType>
+  <ArticleCount>1</ArticleCount>
+  <Articles>
+
+  <%= yield %>
+
+  </Articles>
+</xml> 
