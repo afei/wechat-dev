@@ -15,7 +15,9 @@ class WechatsController < ApplicationController
 		Rails.logger.info( content )
 		doc = Nokogiri::Slop( content )
     if doc.xml.MsgType.content == "event" and doc.xml.Event.content == "subscribe"
-      render "wechats/welcome", layout: message, :formats => :xml
+			article = Article.find(1)
+      # render "articles/gen_message", layout: message, :formats => :xml
+			redirect_to "articles/show", :formats => :xml
     else
       render "wechats/welcome", layout: message, :formats => :xml
     end
@@ -35,7 +37,6 @@ class WechatsController < ApplicationController
 	end
 
 	private
-	
 
 	def gen_auth_path origin_path
   "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{origin_path}&response_type=code&scope=snsapi_base#wechat_redirect"  

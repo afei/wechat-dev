@@ -15,6 +15,16 @@ class ArticlesController < ApplicationController
 			render :new
 		end
   end
+
+	def show
+		@article = Article.find(1)
+		
+		respond_to do |format|
+			format.html { render }
+			format.xml { render :xml=>@article.to_xml }
+		end
+	end
+
 	
 	private
 	def article_params
