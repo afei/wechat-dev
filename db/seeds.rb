@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Article.create( title: "恒隆小额贷款股份有限公司", description: "", picurl: "msg_title_img.jpg", url: "http://wechat.afeil.com/articles/1")
+Article.create( title: "恒隆小额贷款股份有限公司", description: "", picurl: "http://o7x3vuah6.bkt.clouddn.com/title.jpg", url: "http://wechat.afeil.com/articles/1")

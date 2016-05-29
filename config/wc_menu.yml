@@ -3,18 +3,18 @@ menu:
   - name: "Photo Action"
     sub_button:
     - type: "pic_sysphoto"
-      name: "Take Photo"
+      name: "拍照图片"
       key: "takephoto"
     - type: "pic_photo_or_album"
-      name: "Select Photo"
+      name: "选择图片"
       key: "selectphoto"
 
   - name: "Web Action"
     sub_button:
     - type: "view"
-      name: "afeil.com"
+      name: "公司简介"
       url: "http://wechat.afeil.com/articles/1"
     - type: "view"
-      name: "test.com"
-      url: "www.baidu.com"
+      name: "功能页"
+      url: "http://wechat.afeil.com/home"
 

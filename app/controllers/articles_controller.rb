@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
 		
 		respond_to do |format|
 			format.html { render }
+			Rails.logger.info( @article.to_xml )
 			format.xml { render :xml=>@article.to_xml }
 		end
 	end

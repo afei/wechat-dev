@@ -22,6 +22,10 @@ class WechatsController < ApplicationController
     end
   end
 	
+	def home
+	
+	end
+
   def create_menu
 		url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=#{get_access_token}"
 		menufilepath = Rails.root.join( Rails.root, 'config', "wc_menu.yml" )
