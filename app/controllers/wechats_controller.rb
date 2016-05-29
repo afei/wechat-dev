@@ -36,8 +36,8 @@ class WechatsController < ApplicationController
 		wechatmenu = YAML.load_file( menufilepath )['menu']
 		Rails.logger.info( wechatmenu )
 
-		wechatmenu["button"][1]["sub_button"][1]["url"] = gen_auth_path( ( "http://wechat.afeil.com/wechats/home/?words=welcomecome").encode )
-		wechatmenu["button"][1]["sub_button"][2]["url"] = gen_auth_path( ( "http://wechat.afeil.com/wechats/binding/?words=welcomecome").encode )
+		wechatmenu["button"][1]["sub_button"][1]["url"] = gen_auth_path( wechatmenu["button"][1]["sub_button"][1]["url"] ) 
+		wechatmenu["button"][1]["sub_button"][2]["url"] = gen_auth_path( wechatmenu["button"][1]["sub_button"][2]["url"] ) 
 		jsonmenu = JSON.generate( wechatmenu)
 
 		Rails.logger.info( "create_menu " + jsonmenu )

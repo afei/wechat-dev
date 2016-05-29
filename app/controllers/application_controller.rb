@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
 	
   def gen_auth_path origin_path
-  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{origin_path}&response_type=code&scope=snsapi_userinfo#wechat_redirect"  
+		"https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{ERB::Util.url_encode(origin_path)}&response_type=code&scope=snsapi_userinfo#wechat_redirect"  
 	end
 
 	def http_post( url, body )

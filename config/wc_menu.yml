@@ -16,7 +16,7 @@ menu:
       url: "http://wechat.afeil.com/articles/1"
     - type: "view"
       name: "功能页"
-      url: "http://wechat.afeil.com/ewchats/home"
+      url: "http://wechat.afeil.com/wechats/home"
     - type: "view"
       name: "绑定账户"
       url: "http://wechat.afeil.com/wechats/binding"
