@@ -1,6 +1,6 @@
 menu:
   button:
-  - name: "Photo Action"
+  - name: "图片操作"
     sub_button:
     - type: "pic_sysphoto"
       name: "拍照图片"
@@ -9,7 +9,7 @@ menu:
       name: "选择图片"
       key: "selectphoto"
 
-  - name: "Web Action"
+  - name: "服务大厅"
     sub_button:
     - type: "view"
       name: "公司简介"

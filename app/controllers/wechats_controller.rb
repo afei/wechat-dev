@@ -44,9 +44,5 @@ class WechatsController < ApplicationController
 		resbody = http_post( url, jsonmenu )
     render "wechats/create_menu", layout: false, json: resbody
 	end
-
-	private
-
-	
 	
 end
