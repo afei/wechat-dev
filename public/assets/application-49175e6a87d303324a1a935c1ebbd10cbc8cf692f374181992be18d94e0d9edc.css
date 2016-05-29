@@ -1,0 +1,166 @@
+/* line 6, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+html, body {
+  color: #222;
+  font-family: Microsoft YaHei, Helvitica, Verdana, Tohoma, Arial, san-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* line 7, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+img {
+  border: 0;
+}
+
+/* line 9, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+ol, ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* line 11, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+.clr {
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 12, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+.copyright {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* line 13, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+.copyright a {
+  color: #666;
+}
+
+/* line 14, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+h2 {
+  font-size: 16px;
+}
+
+/* line 20, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body {
+  background-color: #eee;
+}
+
+/* line 21, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu:after {
+  clear: both;
+  content: " ";
+  display: block;
+}
+
+/* line 23, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li {
+  float: left;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  width: 30%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* line 27, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li a {
+  display: block;
+  color: #FFF;
+  text-align: center;
+}
+
+/* line 28, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li a b {
+  display: block;
+  height: 80px;
+}
+
+/* line 29, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li a img {
+  margin: 15px auto 15px;
+  width: 50px;
+  height: 50px;
+}
+
+/* line 32, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li a span {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  background-color: #FFF;
+  color: #999;
+  font-size: 14px;
+}
+
+/* line 34, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+1) {
+  background-color: #36A1DB;
+}
+
+/* line 35, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+2) {
+  background-color: #678ce1;
+}
+
+/* line 36, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+3) {
+  background-color: #8c67df;
+}
+
+/* line 37, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+4) {
+  background-color: #84d018;
+}
+
+/* line 38, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+5) {
+  background-color: #14c760;
+}
+
+/* line 39, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+6) {
+  background-color: #f3b613;
+}
+
+/* line 40, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+7) {
+  background-color: #ff8a4a;
+}
+
+/* line 41, /Users/ichr/Rails/wechat-dev/app/assets/stylesheets/wechats.scss */
+body .mainmenu li:nth-child(8n+8) {
+  background-color: #fc5366;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
