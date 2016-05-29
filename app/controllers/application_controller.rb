@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
     end
   end
 	
+  def gen_auth_path origin_path
+  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{origin_path}&response_type=code&scope=snsapi_userinfo#wechat_redirect"  
+	end
+
 	def http_post( url, body )
 		uri = URI(url)
 		Net::HTTP.start( uri.host, uri.port, use_ssl: uri.scheme == 'https') do |https|

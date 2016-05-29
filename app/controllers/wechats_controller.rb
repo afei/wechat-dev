@@ -16,14 +16,18 @@ class WechatsController < ApplicationController
 		@doc = Nokogiri::Slop( content )
     if @doc.xml.MsgType.content == "event" and @doc.xml.Event.content == "subscribe"
 			@article = Article.find(1)
-			render "articles/show", layout: "message_layout", :formats => :xml
+			render "articles/show", layout: "message", :formats => :xml
     else
-      render "wechats/welcome", layout: message, :formats => :xml
+      render "wechats/welcome", layout: "message", :formats => :xml
     end
   end
 	
 	def home
+    render layout: "wechat"	
+	end
 	
+	def binding
+    render layout: "wechat"
 	end
 
   def create_menu
@@ -31,7 +35,9 @@ class WechatsController < ApplicationController
 		menufilepath = Rails.root.join( Rails.root, 'config', "wc_menu.yml" )
 		wechatmenu = YAML.load_file( menufilepath )['menu']
 		Rails.logger.info( wechatmenu )
-		wechatmenu["button"][1]["sub_button"][1]["url"] = gen_auth_path( ( "http://www.afeil.com/members/new/?words=welcome come").encode )
+
+		wechatmenu["button"][1]["sub_button"][1]["url"] = gen_auth_path( ( "http://wechat.afeil.com/wechats/home/?words=welcomecome").encode )
+		wechatmenu["button"][1]["sub_button"][2]["url"] = gen_auth_path( ( "http://wechat.afeil.com/wechats/binding/?words=welcomecome").encode )
 		jsonmenu = JSON.generate( wechatmenu)
 
 		Rails.logger.info( "create_menu " + jsonmenu )
@@ -41,9 +47,6 @@ class WechatsController < ApplicationController
 
 	private
 
-	def gen_auth_path origin_path
-  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=#{ENV["APPID"]}&redirect_uri=#{origin_path}&response_type=code&scope=snsapi_base#wechat_redirect"  
-	end
 	
 	
 end

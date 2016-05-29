@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'wechats/auth', to: 'wechats#wechat_auth'
   post 'wechats/auth', to: 'wechats#wechat_post'
+	get 'wechats/home', to: 'wechats#home'
+	get 'wechats/binding', to: 'wechats#binding'
 
 	get 'wechats/create_menu', to: 'wechats#create_menu'
 
